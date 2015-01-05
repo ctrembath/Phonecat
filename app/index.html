@@ -20,6 +20,9 @@
         <option value="age">Newest</option>
       </select>
 
+    </div>
+    <div class="col-md-10">
+
       <ul class="phones"> 
         <li ng-repeat="phone in phones | filter:query | orderBy:orderProp">
           {{phone.name}}
