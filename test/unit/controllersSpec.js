@@ -26,7 +26,14 @@ describe('PhoneCat controllers', function() {
     expect(scope.orderProp).toBe('age');
     });
 
+  it("should render phone specific links",function() {
+    var query = element(by.model('query'));
+    query.sendKeys('nexus');
+    element.all(by.css('.phones li a')).first().click();
+    browser.getLocationAbsUrls().then(function(url) {
+      expect(url.split('#')[1]).toBe('/phones/nexus-s')
+      });
+    });
   });
-
 });
 
